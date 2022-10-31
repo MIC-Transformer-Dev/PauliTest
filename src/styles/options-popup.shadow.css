@@ -1,0 +1,40 @@
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.option-label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+.choices {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.choice-item {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--light-grey);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  background: none;
+}
+
+.choice-item.active {
+  font-weight: 600;
+  color: var(--black);
+}

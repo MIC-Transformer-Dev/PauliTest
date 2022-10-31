@@ -1,0 +1,38 @@
+@document.meta
+  title: Prawf Todo List
+  description:
+  authors: elianiva
+  created: 2022-02-12
+@end
+
+* TODO LIST
+  - [x] Use @fontsource instead of embeeding @import in css file
+  - [x] Figure out scoring system
+    - [x] Concept
+    - [x] Calculate consistency
+    - [x] Calculate accuracy
+    - [x] Calculate correct answers
+  - [x] Figure out how to make the animation
+  - [x] Create countdown animation (it's like a reverse loading bar)
+  - [x] Show time left
+  - [_] Figure out how to make the interval faster (like, how fast should it be)
+  - [x] Generate numbers for the test (should we populate it first? should we generate it every click event?)
+  - [_] Create the backend to store the score (probably gonna use restana and sqlite for the db)
+  - [x] Create homepage
+  - [_] Create leaderboard page
+  - [x] Figure out routing system
+  - [x] Create notfound page
+  - [x] Add dialog to choose time limit
+    - [x] Popup functionality
+    - [x] Options chooser / dropdown
+  - [x] Add funfact-like page (result) with a fancy chart
+    - [x] Create the chart
+    - [x] Figure out icons to use
+  - [_] Might want to rename fooEvent to fooSubscription since it's a subscription instead of a stream
+  - [x] Probably delete the isConnected guard since it seems useless
+  - [x] Make the amount of rounds configurable
+  - [x] Create history table
+  - [x] Tidy up imports
+  - [x] add dark mode
+  - [x] write readme
+  - [x] write something in my website
