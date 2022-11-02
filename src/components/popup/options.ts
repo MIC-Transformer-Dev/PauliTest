@@ -1,6 +1,6 @@
 import { fromEvent, Subscription } from "rxjs";
 import { optionsPopupVisibility$ } from "@/store/popup";
-import baseStyles from "@/styles/base-popup.shadow.css?inline";
+import baseStyles from "@/styles/base-popup.shadow.option.css?inline";
 import styles from "@/styles/options-popup.shadow.css?inline";
 import { currentRoute$ } from "@/store/route";
 import {
@@ -82,6 +82,7 @@ export default class OptionsPopup extends HTMLElement {
             </label>
           </div>
         </div>
+        <p class="option-warning">Tes akan menggunakan mode Landscape. Harap mengubah device anda ke mode Landscape sebelum menekan Start</p>
         <div class="footer" id="footer">
           <button id="start" class="primary-button">
             Start

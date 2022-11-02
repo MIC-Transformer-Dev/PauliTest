@@ -6,6 +6,12 @@
   height: 100vh;
 }
 
+@media screen and (max-width: 1080px) {
+  .host {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
 .container {
   height: 100%;
   display: flex;

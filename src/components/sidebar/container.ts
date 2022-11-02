@@ -41,11 +41,13 @@ export default class SidebarContainer extends HTMLElement {
           color: var(--black);
         }
       </style>
+      <div class="side-box">
       <div class="top-box">
         <p-countdown-timer></p-countdown-timer>
       </div>
       <span class="history-title">History</span>
       <p-history></p-history>
+      </div>
     `;
 
     this._shadowRoot.appendChild(wrapper.content.cloneNode(true));
