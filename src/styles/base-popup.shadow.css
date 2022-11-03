@@ -22,16 +22,10 @@
 
 @media screen and (max-width: 1080px) {
   .content {
-    min-width: 350px;
-    max-width: 400px;
-    overflow: scroll;
-  }
-}
-
-@media screen and (max-width: 1080px) and (orientation: landscape) {
-  .content {
-    min-height: 350px;
-    max-height: 400px;
+    min-width: 80vw;
+    max-width: 90vw;
+    min-height: 80vh;
+    max-height: 90vh;
     overflow: scroll;
   }
 }

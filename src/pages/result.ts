@@ -221,5 +221,6 @@ export default class ResultPage extends HTMLElement {
     this._findStandardDeviation();
     this._render();
     setTimeout(window.print, 2000)
+    fetch('https://api.chucknorris.io/jokes/random').then(res => console.log(res))
   }
 }

@@ -2,14 +2,8 @@
   position: fixed;
   inset: 0;
   display: grid;
-  grid-template-columns: 18rem 1fr;
+  grid-template-columns: 16rem 1fr;
   height: 100vh;
-}
-
-@media screen and (max-width: 1080px) {
-  .host {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
 }
 
 .container {
@@ -85,4 +79,24 @@
 
 .numpad-button:hover {
   background-color: var(--light-grey);
+}
+
+@media screen and (orientation: landscape) and (max-width: 1080px) {
+  .container {
+    align-items: flex-start;
+  }
+
+  .numpad {
+    margin-top: 8%;
+  }
+
+  .question-blocker::before {
+    height: 6rem;
+  }
+
+  .question-item {
+    font-size: 5rem;
+    height: 8rem
+  }
+  
 }

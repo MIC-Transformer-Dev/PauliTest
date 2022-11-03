@@ -82,7 +82,7 @@ export default class OptionsPopup extends HTMLElement {
             </label>
           </div>
         </div>
-        <p class="option-warning">Tes akan menggunakan mode Landscape. Harap mengubah device anda ke mode Landscape sebelum menekan Start</p>
+        <p class="option-warning">Tes akan menggunakan mode landscape. Harap aktifkan tampilan desktop di browser anda dan gunakan mode Landscape sebelum menekan Start</p>
         <div class="footer" id="footer">
           <button id="start" class="primary-button">
             Start
