@@ -28,6 +28,9 @@ export type GameHistory = {
 // debugging purpose only
 // import FAKE from "@/FAKE.json";
 // export const gameHistory: GameHistory[] = [...(FAKE) as GameHistory[]];
+export let email: HTMLInputElement;
+export const email$ = new Subject<HTMLInputElement>();
+email$.subscribe((input) => (email = input));
 
 export const gameHistory: GameHistory[] = [];
 export const gameHistory$ = new Subject<GameHistory>();

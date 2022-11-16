@@ -19,7 +19,7 @@ export default class Chart extends HTMLElement {
   private _stepHeight = 0;
   private _points: Point[] = [];
   private _chartData: ChartData[];
-  private readonly CHART_WIDTH = 912;
+  private readonly CHART_WIDTH = 712;
   private readonly CHART_HEIGHT = 360;
   private readonly CHART_GAP = 16;
   private readonly Y_OFFSET = 80;
