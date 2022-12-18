@@ -5,7 +5,6 @@ import styles from "@/styles/result.shadow.css?inline";
 import { toFixedTwo } from "@/utils/toFixedTwo";
 import barChartIcon from "@/icons/bar-chart.svg?raw";
 import lineChartIcon from "@/icons/line-chart.svg?raw";
-import questionIcon from "@/icons/question.svg?raw";
 import {
   from,
   fromEvent,
@@ -52,65 +51,6 @@ export default class ResultPage extends HTMLElement {
         <h1 class="title">Your Test Result</h1>
         <h2 align="center">${new Date().toLocaleString()}</h3>
         <a class="back-button" href="/" id="back">Back to home</a>
-        <div class="result-box">
-          <div class="result-item">
-            <span class="result-question">${questionIcon}</span>
-            <div class="result-info">
-              <p>Total jawaban benar dari seluruh soal.</p>
-            </div>
-            <span class="result-label">Jawaban Benar</span>
-            <span class="result-value">${this._correct}</span>
-          </div>
-          <div class="result-item">
-            <span class="result-question">${questionIcon}</span>
-            <div class="result-info">
-              <p>Total jawaban salah dari seluruh soal.</p>
-            </div>
-            <span class="result-label">Jawaban Salah</span>
-            <span class="result-value">${this._incorrect}</span>
-          </div>
-          <div class="result-item">
-            <span class="result-question">${questionIcon}</span>
-            <div class="result-info">
-              <p>Rasio jawaban benar dari seluruh soal.</p>
-            </div>
-            <span class="result-label">Rasio Jawaban Benar</span>
-            <span class="result-value">${this._averageRatio * 100}%</span>
-          </div>
-          <div class="result-item">
-            <span class="result-question">${questionIcon}</span>
-            <div class="result-info">
-              <p>
-                Standar deviasi adalah seberapa banyak perbedaan jumlah jawaban setiap rondenya.
-                Angka kecil menunjukkan bahwa anda konsisten. Angka besar menunjukkan anda tidak konsisten antar rondenya.
-              </p>
-            </div>
-            <span class="result-label">Standar Deviasi</span>
-            <span class="result-value">${this._standardDeviation}</span>
-          </div>
-          <div class="result-item">
-            <span class="result-question">${questionIcon}</span>
-            <div class="result-info">
-              <p>
-                Durasi pengerjaan tes. Opsi ini sudah dipilih saat sebelum pengerjaan tes.
-              </p>
-            </div>
-            <span class="result-label">Durasi</span>
-            <span class="result-value">${chosenDuration}m</span>
-          </div>
-          <div class="result-item">
-            <span class="result-question">${questionIcon}</span>
-            <div class="result-info">
-              <p>
-                Rata-rata soal yang dijawab di setiap ronde.
-              </p>
-            </div>
-            <span class="result-label">Jawaban per Ronde</span>
-            <span class="result-value">${
-              (this._correct + this._incorrect) / 10
-            }</span>
-          </div>
-        </div>
         <div class="chart-box">
           <div class="chart-header">
             <button class="chart-toggle" id="chart-toggle">
@@ -123,10 +63,6 @@ export default class ResultPage extends HTMLElement {
             </div>
           </div>
           <p-chart></p-chart>
-        </div>
-        <div class="history-box">
-          <span class="history-title">History</span>
-          <p-history-table></p-history-table>
         </div>
       </div>
     `;
@@ -159,8 +95,6 @@ export default class ResultPage extends HTMLElement {
     const results = Object.values(resultsByRound);
     const mean = this._totalAnswered / results.length;
 
-    // I could've done this without rxjs... but meh,
-    // it's fun to do it this way :p
     from(results)
       .pipe(
         map((r) => r.correct + r.incorrect),
@@ -230,11 +164,6 @@ export default class ResultPage extends HTMLElement {
     this._findStandardDeviation();
     this._render();
     setTimeout(window.print, 2000)
-    // fetch('http://localhost:4000/test', {mode: 'cors'})
-    //   .then(async res => {
-    //     const data = await res.json()
-    //     console.log(data)})
-    //   .catch(err => console.log(err))
     fetch('http://localhost:4000/test', {
       method: "POST",
       body: JSON.stringify({
